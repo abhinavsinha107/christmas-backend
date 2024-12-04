@@ -10,7 +10,7 @@ export type ErrorResponse = IResponse & {
 
 export const createResponse = (
   data: IResponse["data"],
-  message?: string
+  message?: string,
 ): IResponse => {
   return { data, message, success: true };
 };

@@ -46,13 +46,8 @@ export const initPassport = (): void => {
             return;
           }
 
-          if (!user.active) {
-            done(createError(401, "User is inactive"), false);
-            return;
-          }
-
-          // if (user.blocked) {
-          //   done(createError(401, "User is blocked, Contact to admin"), false);
+          // if (!user.active) {
+          //   done(createError(401, "User is inactive"), false);
           //   return;
           // }
 
