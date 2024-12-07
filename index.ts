@@ -24,8 +24,6 @@ declare global {
   }
 }
 
-console.log(process.env.STRIPE_SECRET_KEY, "here")
-
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2024-11-20.acacia",
 });
@@ -43,7 +41,8 @@ app.post(
   express.raw({ type: "application/json" }), // Stripe expects raw body for webhooks
   handleStripeWebhook
 );
-
+console.log(process.env.NODE_ENV, "NODE_ENV");
+console.log(process.env.FE_BASE_URL, "FE_BASE_URL");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
