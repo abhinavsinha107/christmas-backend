@@ -35,7 +35,6 @@ export const deleteUser = async (id: string) => {
 
 export const getUserById = async (id: string) => {
   const result = await UserSchema.findById(id).select("-password").lean();
-  console.log(result);
   return result;
 };
 
